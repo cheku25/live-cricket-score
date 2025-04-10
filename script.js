@@ -1,7 +1,7 @@
-const apiKey = 1015c3d0-9a23-417e-815c-d48f9b65dbb8; // Replace with your actual CricAPI key
+const apiKey = "1015c3d0-9a23-417e-815c-d48f9b65dbb8"; // Your actual CricAPI key
 const scoreDiv = document.getElementById("score");
 
-fetch(`https://api.cricapi.com/v1/currentMatches?apikey=${apiKey}&offset=0`)
+fetch(`https://corsproxy.io/?https://api.cricapi.com/v1/currentMatches?apikey=${apiKey}&offset=0`)
   .then(response => response.json())
   .then(data => {
     if (data.status !== "success" || !data.data || data.data.length === 0) {
@@ -35,3 +35,4 @@ fetch(`https://api.cricapi.com/v1/currentMatches?apikey=${apiKey}&offset=0`)
     console.error("Fetch error:", error);
     scoreDiv.innerText = "Error loading scores.";
   });
+
